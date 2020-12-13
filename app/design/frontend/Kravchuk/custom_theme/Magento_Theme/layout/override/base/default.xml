@@ -115,12 +115,22 @@
         <referenceContainer name="footer-container">
             <container name="footer" as="footer" label="Page Footer" htmlTag="div" htmlClass="footer content">
                 <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" template="Magento_Store::switch/stores.phtml"/>
-                <block class="Magento\Framework\View\Element\Html\Links" name="footer_links">
+                <referenceBlock class="Magento\Framework\View\Element\Html\Links" name="footer_links" remove="true">
                     <arguments>
                         <argument name="css_class" xsi:type="string">footer links</argument>
                     </arguments>
+                </referenceBlock>
+                <block class="Magento\Cms\Block\Block" name="FooterLinks" before="-">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-links</argument>
+                    </arguments>
                 </block>
-                <block class="Magento\Theme\Block\Html\Footer" name="copyright" template="Magento_Theme::html/copyright.phtml"/>
+                <block class="Magento\Cms\Block\Block" name="FooterSocial" after="FooterLinks">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-social</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Theme\Block\Html\Footer" name="copyright" template="Magento_Theme::contacts.phtml"/>
                 <block class="Magento\Framework\View\Element\Template" name="report.bugs" template="Magento_Theme::html/bugreport.phtml" ifconfig="design/footer/report_bugs"/>
             </container>
         </referenceContainer>
