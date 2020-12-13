@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    </head>
+    <body>
+        <referenceContainer name="product.info.form.options">
+            <block class="Magento\Cms\Block\Block" name="ProductSaleCode" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">product-code-block</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="product.info.form.options">
+            <block class="Magento\Cms\Block\Block" name="ProductPros" after="ProductSaleCode">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">product-pros-block</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+    </body>
+</page>
