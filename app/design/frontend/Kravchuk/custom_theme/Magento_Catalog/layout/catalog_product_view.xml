@@ -21,5 +21,21 @@
             </block>
         </referenceContainer>
 
+        <referenceContainer name="page.main.title">
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="Magento_Catalog::product/view/attribute.phtml" before="-">
+                <arguments>
+                    <argument name="at_call" xsi:type="string">getSku</argument>
+                    <argument name="at_code" xsi:type="string">sku</argument>
+                    <argument name="css_class" xsi:type="string">sku</argument>
+                    <argument name="at_label" xsi:type="string">default</argument>
+                    <argument name="add_attribute" xsi:type="string">itemprop="sku"</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="product.info.stock.sku" label="Product auxiliary info" htmlTag="div" htmlClass="product-info-stock-sku" remove="true"/>
+
+        <referenceContainer name="product.info.price">
+            <block name="sale.viewmodel" template="Magento_Catalog::sale.phtml" after="-" />
+        </referenceContainer>
     </body>
 </page>
