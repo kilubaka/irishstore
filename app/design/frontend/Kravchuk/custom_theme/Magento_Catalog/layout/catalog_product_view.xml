@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    </head>
+
     <body>
         <referenceContainer name="product.info.form.options">
             <block class="Magento\Cms\Block\Block" name="ProductSaleCode" before="-">
@@ -11,15 +9,13 @@
                     <argument name="block_id" xsi:type="string">product-code-block</argument>
                 </arguments>
             </block>
-        </referenceContainer>
-
-        <referenceContainer name="product.info.form.options">
             <block class="Magento\Cms\Block\Block" name="ProductPros" after="ProductSaleCode">
                 <arguments>
                     <argument name="block_id" xsi:type="string">product-pros-block</argument>
                 </arguments>
             </block>
         </referenceContainer>
+
 
         <referenceContainer name="page.main.title">
             <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="Magento_Catalog::product/view/attribute.phtml" before="-">
@@ -35,7 +31,15 @@
         <referenceContainer name="product.info.stock.sku" label="Product auxiliary info" htmlTag="div" htmlClass="product-info-stock-sku" remove="true"/>
 
         <referenceContainer name="product.info.price">
-            <block name="sale.viewmodel" template="Magento_Catalog::sale.phtml" after="-" />
+            <block name="sale.viewmodel" template="Kravchuk_ModuleAdder::sale.phtml" class="Kravchuk\ModuleAdder\Block\DiscountViewModel" after="-"/>
         </referenceContainer>
+
+<!--        <referenceContainer name="product.info.main">-->
+<!--            <block class="Magento\Cms\Block\Block" name="DetailsVerdict" after="-">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_id" xsi:type="string">details-verdict</argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--        </referenceContainer>-->
     </body>
 </page>

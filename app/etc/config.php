@@ -330,6 +330,8 @@ return [
         'Kravchuk_ModuleAdder' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
+        'Swissup_Core' => 1,
+        'Swissup_Easytabs' => 1,
         'Temando_ShippingRemover' => 1,
         'Vertex_Tax' => 1,
         'Vertex_AddressValidationApi' => 1,

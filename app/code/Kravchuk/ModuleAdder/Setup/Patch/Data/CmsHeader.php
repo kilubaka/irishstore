@@ -43,13 +43,13 @@ class CmsHeader implements DataPatchInterface, PatchVersionInterface
     public function apply()
     {
         $my_var = <<<EOD
-            <div class="header-top__banner" style="text-align: center; padding: 10px; background-color: #2d2b31; font-family: Roboto,Helvetica,Arial,sans-serif;">
-                <div class="header-top__banner-text" style="font-size: 18px; font-style: normal; color: #B3995A; font-weight: bold; text-transform: uppercase;"><strong>FREE STANDARD SHIPPING ON ORDERS OVER $120</strong></div>
-                <div class="header-top__banner-subtext" style="color: #fff; font-size: 13px; font-style: normal;">Use code <strong>SP120</strong> at checkout</div>
-            </div>
+        <div class="header-top__banner">
+            <div class="header-top__banner-text"><strong>FREE STANDARD SHIPPING ON ORDERS OVER $120</strong></div>
+            <div class="header-top__banner-subtext">Use code <strong>SP120</strong> at checkout</div>
+        </div>
         EOD;
         $newCmsStaticBlock = [
-            'title' => 'header-top__banner',
+            'title' => 'Header Banner',
             'identifier' => 'header-top__banner',
             'content' => $my_var,
             'is_active' => 1,

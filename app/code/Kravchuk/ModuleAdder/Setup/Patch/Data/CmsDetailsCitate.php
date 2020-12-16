@@ -9,10 +9,10 @@ use Magento\Cms\Model\BlockFactory;
 
 // date-base tables: patch_list cms_block
 /**
- * Class CmsOptionsPros
+ * Class CmsDetailsCitate
  * @package Kravchuk\ModuleAdder\Setup\Patch\Data
  */
-class CmsOptionsPros implements DataPatchInterface, PatchVersionInterface
+class CmsDetailsCitate implements DataPatchInterface, PatchVersionInterface
 {
     /**
      * @var ModuleDataSetupInterface
@@ -43,18 +43,17 @@ class CmsOptionsPros implements DataPatchInterface, PatchVersionInterface
     public function apply()
     {
         $my_var = <<<EOD
-        <div class="product-pros__block">
-            <ul class="product-pros-list">
-                <li>Five star customer reviews</li>
-                <li>Beautifully crafted from Donegal merino yarn</li>
-                <li>Features the classic honeycomb Aran stitch</li>
-                <li>Model is a US size 8-10 and wears size M</li>
-            </ul>
+        <div class="verdict">
+          <div class="verdict-inner">
+            <div class="verdict-title">The Verdict</div>
+            <div class="verdict-text">"Simply beautiful in every way! I would love to order several more from The Irish Store because the sweaters and service are excellent."</div>
+            <div class="verdict-author">C. McAdoo in Tennessee - USA</div>
+          </div>
         </div>
         EOD;
         $newCmsStaticBlock = [
-            'title' => 'Options Advantages Block',
-            'identifier' => 'product-pros-block',
+            'title' => 'CmsDetailsCitate',
+            'identifier' => 'details-verdict',
             'content' => $my_var,
             'is_active' => 1,
             'stores' => \Magento\Store\Model\Store::DEFAULT_STORE_ID

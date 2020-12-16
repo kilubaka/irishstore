@@ -43,10 +43,10 @@ class CmsOptionsCode implements DataPatchInterface, PatchVersionInterface
     public function apply()
     {
         $my_var = <<<EOD
-            <div class="product-code__block" style="padding: 6px; border-bottom: 1px solid #ccc; font-size: 14px;">
-                <div><span style="color: #9a1a28; font-weight: bold;">FREE STANDARD SHIPPING </span> on orders over $120</div>
-                <div>Use code <strong>SP120</strong> at checkout</div>
-            </div>
+        <div class="product-code__block">
+            <div><span>FREE STANDARD SHIPPING </span> on orders over $120</div>
+            <div>Use code <strong>SP120</strong> at checkout</div>
+        </div>
         EOD;
         $newCmsStaticBlock = [
             'title' => 'Options Sale Code Block',
