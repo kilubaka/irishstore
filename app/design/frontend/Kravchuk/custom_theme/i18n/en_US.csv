@@ -137,7 +137,7 @@ Import,Import
 "ALL GROUPS","ALL GROUPS"
 "Add Price","Add Price"
 "Default Values","Default Values"
-"Related Products","Related Products"
+"Related Products","You May Also Like"
 Up-sells,Up-sells
 Cross-sells,Cross-sells
 "Size for %1","Size for %1"
@@ -432,7 +432,7 @@ Search,Search
 "Multiple Select","Multiple Select"
 Dropdown,Dropdown
 "%1 doesn't extend \Magento\Framework\Filter\Template","%1 doesn't extend \Magento\Framework\Filter\Template"
-"As low as","As low as"
+"As low as","Was"
 test,test
 "Could not get extension attributes","Could not get extension attributes"
 message,message

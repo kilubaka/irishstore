@@ -16,7 +16,7 @@ return [
                 'host' => 'mariadb',
                 'dbname' => 'dev',
                 'username' => 'root',
-                'password' => '',
+                'password' => '1234',
                 'model' => 'mysql4',
                 'engine' => 'innodb',
                 'initStatements' => 'SET NAMES utf8;',

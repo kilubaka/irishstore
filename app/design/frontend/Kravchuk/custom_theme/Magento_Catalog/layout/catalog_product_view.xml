@@ -16,6 +16,8 @@
             </block>
         </referenceContainer>
 
+        <referenceBlock name="product.info.review" remove="true" />
+        <referenceContainer name="product.info.stock.sku" remove="true"/>
 
         <referenceContainer name="page.main.title">
             <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="Magento_Catalog::product/view/attribute.phtml" before="-">
@@ -27,19 +29,35 @@
                     <argument name="add_attribute" xsi:type="string">itemprop="sku"</argument>
                 </arguments>
             </block>
+            <block class="Magento\Catalog\Block\Product\View" name="product.reviews" template="Magento_Catalog::product/view/review.phtml" after="-" />
         </referenceContainer>
-        <referenceContainer name="product.info.stock.sku" label="Product auxiliary info" htmlTag="div" htmlClass="product-info-stock-sku" remove="true"/>
 
         <referenceContainer name="product.info.price">
             <block name="sale.viewmodel" template="Kravchuk_ModuleAdder::sale.phtml" class="Kravchuk\ModuleAdder\Block\DiscountViewModel" after="-"/>
         </referenceContainer>
 
-<!--        <referenceContainer name="product.info.main">-->
-<!--            <block class="Magento\Cms\Block\Block" name="DetailsVerdict" after="-">-->
-<!--                <arguments>-->
-<!--                    <argument name="block_id" xsi:type="string">details-verdict</argument>-->
-<!--                </arguments>-->
-<!--            </block>-->
-<!--        </referenceContainer>-->
+        <move element="catalog.product.related" destination="content" after="content.WeLoveIt" />
+
+        <referenceContainer name="content">
+            <block class="Magento\Cms\Block\Block" name="content.WeLoveIt" after="product.info.details">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">weLoveIt-block</argument>
+                </arguments>
+            </block>
+
+
+            <block class="Magento\Review\Block\Product\Review" name="reviews.tab" as="reviews" template="Magento_Review::review.phtml" group="detailed_info">
+                <block class="Magento\Review\Block\Product\View\ListView" name="product.info.product_additional_data" as="product_additional_data" template="product/view/list.phtml"/>
+                <block class="Magento\Theme\Block\Html\Pager" name="product_review_list.toolbar">
+                    <arguments>
+                        <argument name="setLimit" xsi:type="number">5</argument>
+                    </arguments>
+                </block>
+
+            </block>
+        </referenceContainer>
+
+
+
     </body>
 </page>
