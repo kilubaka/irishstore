@@ -14,6 +14,7 @@
                     <argument name="block_id" xsi:type="string">product-pros-block</argument>
                 </arguments>
             </block>
+
         </referenceContainer>
 
         <referenceBlock name="product.info.review" remove="true" />
@@ -46,16 +47,13 @@
             </block>
 
 
-            <block class="Magento\Review\Block\Product\Review" name="reviews.tab" as="reviews" template="Magento_Review::review.phtml" group="detailed_info">
-                <block class="Magento\Review\Block\Product\View\ListView" name="product.info.product_additional_data" as="product_additional_data" template="product/view/list.phtml"/>
-                <block class="Magento\Theme\Block\Html\Pager" name="product_review_list.toolbar">
-                    <arguments>
-                        <argument name="setLimit" xsi:type="number">5</argument>
-                    </arguments>
-                </block>
-
-            </block>
         </referenceContainer>
+
+        <referenceBlock name="product.info.options.wrapper">
+            <block class="Magento\Catalog\Block\Product\View" template="Magento_Catalog::modal_overlay.phtml"
+                   name="SizeChartPopUp" as="SizeChartPopUp" />
+        </referenceBlock>
+
 
 
 

@@ -13,6 +13,7 @@ define([
      * @param {*} fromPages
      */
     function processReviews(url, fromPages) {
+        $('.items.review-items').fadeTo( "fast", 0);
         $.ajax({
             url: url,
             cache: true,
@@ -20,7 +21,9 @@ define([
             showLoader: false,
             loaderContext: $('.product.data.items')
         }).done(function (data) {
+            $('.items.review-items').fadeTo( "fast", 0.5);
             $('#product-review-container').html(data).trigger('contentUpdated');
+            $('.items.review-items').fadeTo( "fast", 1);
             $('[data-role="product-review"] .pages a').each(function (index, element) {
                 $(element).click(function (event) { //eslint-disable-line max-nested-callbacks
                     processReviews($(element).attr('href'), true);
@@ -28,11 +31,9 @@ define([
                 });
             });
         }).complete(function () {
-            if (fromPages == true) { //eslint-disable-line eqeqeq
-                $('html, body').animate({
-                    scrollTop: $('#reviews').offset().top - 50
-                }, 300);
-            }
+            // $('html, body').animate({
+            //     scrollTop: $('#customer-reviews').offset().top - 50
+            // }, 300);
         });
     }
 

@@ -77,6 +77,13 @@ class CmsContentWeloveit implements DataPatchInterface, PatchVersionInterface
               <button class="scroll-up">Get Yours Today</button>
             </div>
         </div>
+        <script>
+            require(['jquery'], function ($) {
+                $('.scroll-up').on('click', function (){
+                    $('html,body').animate({scrollTop: $("header").offset().top},'slow');
+                });
+            });
+        </script>
         EOD;
         $newCmsStaticBlock = [
             'title' => 'Content WhyWeLoveIt',
