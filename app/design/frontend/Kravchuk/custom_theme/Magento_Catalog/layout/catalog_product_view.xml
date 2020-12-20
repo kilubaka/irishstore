@@ -46,7 +46,6 @@
                 </arguments>
             </block>
 
-
         </referenceContainer>
 
         <referenceBlock name="product.info.options.wrapper">
@@ -54,7 +53,11 @@
                    name="SizeChartPopUp" as="SizeChartPopUp" />
         </referenceBlock>
 
-
+        <referenceBlock name="product.info.media.image">
+            <arguments>
+                <argument name="viewModelNewCollection" xsi:type="object">Kravchuk\ModuleAdder\ViewModel\newLabelViewModel</argument>
+            </arguments>
+        </referenceBlock>
 
 
     </body>

@@ -11,24 +11,17 @@
         </referenceContainer>
 
         <referenceContainer name="header.panel">
-            <block class="Magento\Framework\View\Element\Template" name="header_content" as="header_content" template="Magento_Theme::content.phtml" />
+            <block class="Kravchuk\ModuleAdder\Block\CustomLink" name="custom-header-link" before="-">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Extended 6 Month Free Returns</argument>
+                    <argument name="path" xsi:type="string">https://irishstore.com/delivery-information</argument>
+                </arguments>
+            </block>
             <referenceBlock name="header.links">
-                <block class="Magento\Framework\View\Element\Html\Link" name="My-Account">
-                    <arguments>
-                        <argument name="label" xsi:type="string" translate="true">My Account</argument>
-                        <argument name="path" xsi:type="string">https://irishstore.com/customer/account</argument>
-                    </arguments>
-                </block>
-                <block class="Magento\Framework\View\Element\Html\Link" name="My-Wish-List">
-                    <arguments>
-                        <argument name="label" xsi:type="string" translate="true">My Wish List</argument>
-                        <argument name="path" xsi:type="string">https://irishstore.com/wishlist</argument>
-                    </arguments>
-                </block>
+                <block class="Magento\Customer\Block\Account\Customer" name="customer" template="Magento_Customer::account/customer.phtml" before="-"/>
             </referenceBlock>
             <referenceBlock name="register-link"  remove="true"/>
         </referenceContainer>
-
 
         <referenceContainer name="footer">
             <referenceBlock class="Magento\Framework\View\Element\Html\Links" name="footer_links" remove="true" />
@@ -53,6 +46,14 @@
                 </arguments>
             </block>
         </referenceContainer>
+
+        <referenceBlock name="store.menu">
+            <block class="Magento\Cms\Block\Block" name="NavContacts" after="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">nav-contacts</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
 
     </body>
 </page>

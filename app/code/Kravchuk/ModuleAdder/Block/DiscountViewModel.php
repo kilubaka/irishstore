@@ -41,6 +41,7 @@ class DiscountViewModel extends \Magento\Framework\View\Element\Template
      */
     protected $currencyFactory;
 
+    protected $_registry;
     /**
      * @param CatalogSession $catalogSession
      * @param ProductRepositoryInterface $productRepository
@@ -53,46 +54,26 @@ class DiscountViewModel extends \Magento\Framework\View\Element\Template
         ProductRepositoryInterface $productRepository,
         StoreManagerInterface $storeManager,
         CurrencyFactory $currencyFactory,
+        \Magento\Framework\Registry $registry,
         array $data = []
     ) {
         $this->catalogSession = $catalogSession;
         $this->productRepository = $productRepository;
         $this->storeManager = $storeManager;
         $this->currencyFactory = $currencyFactory;
+        $this->_registry = $registry;
 
         parent::__construct($context, $data);
     }
 
-    /**
-     * @return ProductInterface
-     * @throws NoSuchEntityException
-     */
-    public function getProduct():ProductInterface
-    {
-        if (!isset($this->currentProduct)) {
-            $productId = $this->getProductId();
 
-            if ($productId) {
-                $this->currentProduct = $this->productRepository->getById($productId);
-            }
-        }
-        return $this->currentProduct;
+    public function getProduct()
+    {
+        return $this->_registry->registry('current_product');
     }
 
-    /**
-     * @return string
-     */
-    public function getProductId():string
-    {
-        return $this->catalogSession->getData('last_viewed_product_id');
-    }
-
-    /**
-     * @return string
-     */
     public function calcDiscount()
     {
-        return " - save $30.00";
         $product = $this->getProduct();
         $regularPrice = $product->getPriceInfo()->getPrice('regular_price')->getMinRegularAmount()->getValue();
         $finalPrice = $product->getFinalPrice();
