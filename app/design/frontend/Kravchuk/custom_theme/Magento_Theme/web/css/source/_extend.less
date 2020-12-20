@@ -281,6 +281,9 @@ a.header-text--link:visited{
 .contacts-contact{
     min-width: 290px;
 }
+.contacts-contact{
+    padding: 0 0 0 20px;
+}
 .social{
     &-facebook{
         background: url('@{baseDir}images/facebook-icon.svg') no-repeat;
@@ -393,9 +396,12 @@ a.header-text--link:visited{
 }
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
-    .contacts-inner .contacts-payment .payment-providers::after{
-        width: 290px;
-        height: 20px;
+    .contacts-inner .contacts-payment .payment-providers {
+        width: 80%;
+        &::after {
+            width: 290px;
+            height: 20px;
+        }
     }
     .data.item.content .verdict{
         max-width: 285px;

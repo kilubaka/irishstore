@@ -204,11 +204,16 @@ h1{
     letter-spacing: .05em;
     color: #747678;
 }
+.product-addto-links .action{
+    padding-right: 35px;
+    margin-right: 0;
+}
 .product-social-links .action.towishlist:before{
-    right: -155px;
+    right: -150px;
     position: relative;
     line-height: 20px;
     width: 20px;
+    top: -1px;
 }
 .item.home a{
     color: #000;
@@ -781,11 +786,14 @@ h1.modal-title{
 }
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
     .fieldset .field.qty{
-        left: 240px;
+        left: 235px;
     }
     .gallery-placeholder .new-label-wrap.noselect{
         top: -18px;
         left: -18px;
+    }
+    .contacts-inner{
+        max-width: 315px;
     }
 }
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
@@ -813,7 +821,9 @@ h1.modal-title{
     .gallery-placeholder .new-label-wrap.noselect{
         left: 0;
     }
-
+    .contacts-inner{
+        max-width: unset;
+    }
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {

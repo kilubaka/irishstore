@@ -2,12 +2,13 @@
 
 namespace Kravchuk\ModuleAdder\Setup\Patch\Data;
 
+use Magento\Cms\Model\BlockFactory;
+use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\Patch\PatchVersionInterface;
-use Magento\Framework\Setup\ModuleDataSetupInterface;
-use Magento\Cms\Model\BlockFactory;
 
 // date-base tables: patch_list cms_block
+
 /**
  * Class CmsDetailsCitate
  * @package Kravchuk\ModuleAdder\Setup\Patch\Data
