@@ -2,6 +2,10 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
+        <referenceBlock name="register-link"  remove="true"/>
+        <referenceBlock name="footer_links" remove="true" />
+        <referenceBlock name="copyright" remove="true" />
+
         <referenceContainer name="header.container">
             <block class="Magento\Cms\Block\Block" name="HeaderTopBanner" before="-">
                 <arguments>
@@ -20,11 +24,9 @@
             <referenceBlock name="header.links">
                 <block class="Magento\Customer\Block\Account\Customer" name="customer" template="Magento_Customer::account/customer.phtml" before="-"/>
             </referenceBlock>
-            <referenceBlock name="register-link"  remove="true"/>
         </referenceContainer>
 
         <referenceContainer name="footer">
-            <referenceBlock class="Magento\Framework\View\Element\Html\Links" name="footer_links" remove="true" />
             <block class="Magento\Cms\Block\Block" name="FooterLinks" after="-">
                 <arguments>
                     <argument name="block_id" xsi:type="string">footer-links</argument>
@@ -39,7 +41,6 @@
         </referenceContainer>
 
         <referenceContainer name="before.body.end">
-            <referenceBlock name="copyright" remove="true" />
             <block class="Magento\Cms\Block\Block" name="FooterContacts">
                 <arguments>
                     <argument name="block_id" xsi:type="string">footer-contacts</argument>

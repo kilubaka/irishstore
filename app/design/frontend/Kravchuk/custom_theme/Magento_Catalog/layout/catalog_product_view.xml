@@ -1,8 +1,10 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-
     <body>
+        <referenceBlock name="product.info.review" remove="true" />
+        <referenceContainer name="product.info.stock.sku" remove="true"/>
+
         <referenceContainer name="product.info.form.options">
             <block class="Magento\Cms\Block\Block" name="ProductSaleCode" before="-">
                 <arguments>
@@ -14,11 +16,7 @@
                     <argument name="block_id" xsi:type="string">product-pros-block</argument>
                 </arguments>
             </block>
-
         </referenceContainer>
-
-        <referenceBlock name="product.info.review" remove="true" />
-        <referenceContainer name="product.info.stock.sku" remove="true"/>
 
         <referenceContainer name="page.main.title">
             <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="Magento_Catalog::product/view/attribute.phtml" before="-">
@@ -45,7 +43,6 @@
                     <argument name="block_id" xsi:type="string">weLoveIt-block</argument>
                 </arguments>
             </block>
-
         </referenceContainer>
 
         <referenceBlock name="product.info.options.wrapper">
