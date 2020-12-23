@@ -4,54 +4,6 @@
 
 ?>
 
-<div class="size-chart-link">
-    <a href="#"> <?php echo __('Size Chart'); ?></a>
+<div class="size-chart-link" data-trigger="trigger">
+    <a href="#">Size Chart</a>
 </div>
-<div class="size-chart" id="sizeChart" style="display:none;">
-    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('size-chart-content')->toHtml(); ?>
-</div>
-<script>
-    require([
-        'jquery',
-        'Magento_Ui/js/modal/modal'
-    ], function ($, modal) {
-        var options = {
-            type: 'popup',
-            responsive: true,
-            innerScroll: true,
-            title: '<?php echo __('Donegal Merino Blasket Honeycomb Stitch Aran Sweater - Size Chart') ?>',
-            'buttons': [{
-                text: $.mage.__('CLOSE'),
-                class: 'action',
-                click: function () {
-                    this.closeModal();
-                }
-            }]
-        };
-        var slide = modal(options, $('#sizeChart'));
-        $('.size-chart-link a').on('click', function (){
-            $('#sizeChart').modal('openModal');
-            return false;
-        });
-
-        $('#tab-button-in').on('click', function (){
-            if($('#tab-button-in').hasClass('inactive')){
-                $('.table_size.cm').toggleClass('active');
-                $('.table_size.in').toggleClass('active');
-                $('.tab-button.in').toggleClass('inactive');
-                $('.tab-button.cm').toggleClass('inactive');
-            }
-        });
-        $('#tab-button-cm').on('click', function (){
-            if($('#tab-button-cm').hasClass('inactive')){
-                $('.table_size.cm').toggleClass('active');
-                $('.table_size.in').toggleClass('active');
-                $('.tab-button.in').toggleClass('inactive');
-                $('.tab-button.cm').toggleClass('inactive');
-            }
-        });
-    });
-</script>
-
-
-

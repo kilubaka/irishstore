@@ -30,11 +30,7 @@ define([
                     event.preventDefault();
                 });
             });
-        }).complete(function () {
-            // $('html, body').animate({
-            //     scrollTop: $('#customer-reviews').offset().top - 50
-            // }, 300);
-        });
+        }).complete(function () { });
     }
 
     return function (config) {

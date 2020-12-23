@@ -56,6 +56,19 @@
             </arguments>
         </referenceBlock>
 
+        <referenceBlock name="category.products.list">
+            <arguments>
+                <argument name="viewModelNewCollection" xsi:type="object">Kravchuk\ModuleAdder\ViewModel\newLabelViewModel</argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceContainer name="content">
+            <block class="Magento\Cms\Block\Block" name="SizeChartPopup">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">size-chart-content</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
 
     </body>
 </page>

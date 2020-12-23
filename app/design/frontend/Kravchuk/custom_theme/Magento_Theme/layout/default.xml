@@ -13,7 +13,6 @@
                 </arguments>
             </block>
         </referenceContainer>
-
         <referenceContainer name="header.panel">
             <block class="Kravchuk\ModuleAdder\Block\CustomLink" name="custom-header-link" before="-">
                 <arguments>
@@ -21,10 +20,10 @@
                     <argument name="path" xsi:type="string">https://irishstore.com/delivery-information</argument>
                 </arguments>
             </block>
-            <referenceBlock name="header.links">
-                <block class="Magento\Customer\Block\Account\Customer" name="customer" template="Magento_Customer::account/customer.phtml" before="-"/>
-            </referenceBlock>
         </referenceContainer>
+        <referenceBlock name="header.links">
+            <block class="Magento\Customer\Block\Account\Customer" name="customer" template="Magento_Customer::account/customer.phtml" before="-"/>
+        </referenceBlock>
 
         <referenceContainer name="footer">
             <block class="Magento\Cms\Block\Block" name="FooterLinks" after="-">
