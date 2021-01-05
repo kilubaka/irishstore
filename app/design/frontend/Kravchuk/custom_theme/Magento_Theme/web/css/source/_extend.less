@@ -337,7 +337,6 @@ a.header-text--link:visited{
 }
 
 
-
 .action.subscribe.primary{
     background: @button-main;
     border: 1px solid @button-main;
@@ -422,7 +421,6 @@ a.header-text--link:visited{
 
     }
 }
-
 .section-items.nav-sections-items{
     text-align: center;
     padding-top: 5px;
@@ -430,11 +428,6 @@ a.header-text--link:visited{
         background-color: @footer-bg;
     }
 }
-
-.nav-open .nav-toggle:after{
-    background: none;
-}
-
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
     .contacts-inner .contacts-payment .payment-providers {
@@ -479,57 +472,63 @@ a.header-text--link:visited{
 }
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
-    .sections.nav-sections{
+    .nav-open .nav-toggle:after{
+        background: none;
+    }
+    .sections.nav-sections {
         overflow: auto;
         position: fixed;
         background: @footer-bg;
-        .nav-sections-item-content{
+        .nav-sections-item-content {
             margin-top: 60px;
             text-align: left;
         }
-        .section-item-title.nav-sections-item-title{
+        .section-item-title.nav-sections-item-title {
             background: #d4d5cf;
             border: solid @grey;
             border-width: 0 0 1px 1px;
             box-sizing: border-box;
             height: 60px;
             padding-top: 20px;
-            &.active{
+            &.active {
                 background: 0 0;
                 border-width: 0 0 0 1px;
             }
-            a{
+            a {
                 color: @black;
             }
-            .navigation .parent .level-top:after{
+            .navigation .parent .level-top:after {
                 top: 10px;
             }
         }
-        .section-items.nav-sections-items{
+        .section-items.nav-sections-items {
             padding-top: 0;
             height: 150%;
         }
-        .navigation{
-            .level0 > .level-top{
+        .navigation {
+            .level0 > .level-top {
                 line-height: unset;
                 padding: 10px 15px;
                 text-align: left;
             }
-            li.level0{
+
+            li.level0 {
                 border-bottom: none;
-                &.nav-6{
+
+                &.nav-6 {
                     border-bottom: 1px solid @grey;
                 }
             }
         }
-        .greet.welcome{
+        .greet.welcome {
             display: none;
         }
-        .customer-menu .header.links{
+        .customer-menu .header.links {
             background: none;
             box-shadow: none;
             text-align: left;
-            li>a{
+
+            li > a {
                 color: @main-text;
                 text-transform: uppercase;
                 letter-spacing: 1.5px;
@@ -538,30 +537,31 @@ a.header-text--link:visited{
                 line-height: 23px;
             }
         }
-        .switcher-trigger strong:after{
+        .switcher-trigger strong:after {
             right: 0px;
             top: -15px;
         }
-        .switcher-option>a{
+        .switcher-option > a {
             color: @main-text;
         }
-        .nav-contacts{
+        .nav-contacts {
             padding: 0 15px 20px;
             margin-top: 20px;
             margin-bottom: 15px;
             border-bottom: 1px dashed @grey;
-            .block-static-block.widget{
+            .block-static-block.widget {
                 margin-bottom: 0 !important;
                 strong {
                     font-weight: 700;
                 }
-                a:visited,a{
+                a:visited, a {
                     color: @main-text;
                     text-decoration: none;
                 }
             }
         }
     }
+
     .customer-name,
     .customer-welcome + .authorization-link {
         display: none;
@@ -602,9 +602,11 @@ a.header-text--link:visited{
         }
     }
 
-    .fotorama__stage .fotorama__arr.fotorama__arr--prev,
-    .fotorama__stage .fotorama__arr.fotorama__arr--next{
-        display: block !important;
+    .fotorama__stage .fotorama__arr.fotorama__arr--{
+        &prev,
+        &next{
+            display: block !important;
+        }
     }
 }
 & when (@media-target = 'desktop'), (@media-target = 'mobile') {

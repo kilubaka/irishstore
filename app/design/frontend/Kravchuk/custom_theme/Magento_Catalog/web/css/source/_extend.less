@@ -12,64 +12,17 @@
 
 @ff-main: 'Roboto',Helvetica,Arial,sans-serif;
 
-h1{
+.page-title{
     font-weight: 400;
     line-height: 1.1;
     font-size: 2.4rem;
-    &.modal-title{
-        font-weight: 700 !important;
-        font-size: 2.4rem !important;
-    }
 }
-.columns .column.main{
-    padding-bottom: 0;
+.modal-header .modal-title{
+    font-weight: 700;
+    font-size: 2.4rem;
 }
 
-.navigation{
-    li.level0 {
-        box-sizing: border-box;
-        border-bottom: 3px solid rgba(0,0,0,0);
-        &:hover {
-            border-bottom: 3px solid @black;
-        }
-    }
-    .level0 {
-        & > .level-top {
-            padding: 0 20px;
-            color: @main-text;
-            line-height: 45px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-size: 14px;
-            font-weight: 700;
-        }
-        &.parent > .level-top > .ui-menu-icon {
-            display: none;
-        }
-    }
 
-    .level0.submenu,
-    .level1.submenu{
-        border-top: 1px solid @black;
-        background-color: @footer-bg;
-        padding: 10px 0;
-        a{
-            color: @main-text;
-            padding: 5px;
-            &:hover{
-                background-color: @white;
-            }
-        }
-        li{
-            text-align: left;
-            padding: 0 10px;
-        }
-        li.parent > a > .ui-menu-icon{
-            right: 12px;
-            bottom: 6px;
-        }
-    }
-}
 .rating-summary .rating-result{
     vertical-align: baseline;
     & > span:before{

@@ -46,8 +46,13 @@
         </referenceContainer>
 
         <referenceBlock name="product.info.options.wrapper">
-            <block class="Magento\Catalog\Block\Product\View" template="Magento_Catalog::modal_overlay.phtml"
-                   name="SizeChartPopUp" as="SizeChartPopUp" />
+            <block class="Magento\Catalog\Block\Product\View" template="Magento_Catalog::modal_overlay.phtml" name="SizeChartPopUp" as="SizeChartPopUp">
+                <block class="Magento\Cms\Block\Block" name="SizeChartPopup">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">size-chart-content</argument>
+                    </arguments>
+                </block>
+            </block>
         </referenceBlock>
 
         <referenceBlock name="product.info.media.image">
@@ -61,14 +66,5 @@
                 <argument name="viewModelNewCollection" xsi:type="object">Kravchuk\ModuleAdder\ViewModel\newLabelViewModel</argument>
             </arguments>
         </referenceBlock>
-
-        <referenceContainer name="content">
-            <block class="Magento\Cms\Block\Block" name="SizeChartPopup">
-                <arguments>
-                    <argument name="block_id" xsi:type="string">size-chart-content</argument>
-                </arguments>
-            </block>
-        </referenceContainer>
-
     </body>
 </page>
